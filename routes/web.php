@@ -14,6 +14,6 @@
 */
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->post('register', 'AuthController@register'); 
+    $router->get('/ip/{ip}', 'LocationController@index');
  });
 
-$router->get('/', 'LocationController@index');
