@@ -12,9 +12,9 @@ class LocationController extends Controller
      *
      * @return void
      */
-    public function index(Request $request)
+    public function index(string $ip, Request $request)
     {
         $db = new \IP2Location\Database(storage_path('app/IP2LOCATION-LITE-DB11.BIN'), \IP2Location\Database::FILE_IO);
-        return $db->lookup('135.11.114.1', \IP2Location\Database::ALL);
+        return $db->lookup($ip, \IP2Location\Database::ALL);
     }
 }
